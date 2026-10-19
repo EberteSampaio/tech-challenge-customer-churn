@@ -362,6 +362,7 @@ dev = [
 notebooks = [
     { name = "jupyterlab" },
     { name = "matplotlib" },
+    { name = "scipy" },
     { name = "seaborn" },
 ]
 
@@ -381,6 +382,7 @@ dev = [
 notebooks = [
     { name = "jupyterlab", specifier = ">=4.6.4" },
     { name = "matplotlib", specifier = ">=3.11.2" },
+    { name = "scipy", specifier = ">=1.18.1" },
     { name = "seaborn", specifier = ">=0.13.2" },
 ]
 
