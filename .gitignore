@@ -1,0 +1,203 @@
+# =========================================
+# Python
+# =========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribuição / empacotamento
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Logs de instalação
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =========================================
+# Ambientes virtuais
+# =========================================
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# Gerenciadores de dependência
+# uv: versione pyproject.toml, uv.lock e .python-version
+# (mantenha também poetry.lock / Pipfile.lock, se usar essas ferramentas)
+.pdm-python
+.pdm-build/
+
+# =========================================
+# Variáveis de ambiente e segredos
+# =========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# =========================================
+# Testes e cobertura
+# =========================================
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+nosetests.xml
+junit*.xml
+
+# =========================================
+# Linters, formatadores e type checkers
+# =========================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# =========================================
+# Bancos de dados locais
+# =========================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Alembic: versione as migrations; ignore apenas caches
+# (não ignore a pasta alembic/versions/)
+
+# =========================================
+# Logs, uploads e arquivos temporários
+# =========================================
+logs/
+*.log
+uploads/
+media/
+tmp/
+temp/
+*.tmp
+celerybeat-schedule
+celerybeat.pid
+
+# =========================================
+# Jupyter
+# =========================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.jupyter/
+profile_default/
+ipython_config.py
+
+# =========================================
+# Data science: dados
+# =========================================
+# Ignora o conteúdo de data/, mas mantém a estrutura de pastas
+# e o dataset bruto (o Telco tem ~1 MB, então vale versionar
+# para garantir a reprodutibilidade)
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/README.md
+!data/raw/**
+
+# Arquivos compactados (ex.: zip baixado do Kaggle)
+*.zip
+*.tar.gz
+
+# =========================================
+# Data science: modelos treinados
+# =========================================
+# Ignora todos os modelos, exceto o campeão (entregável da Etapa 2)
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.keras
+*.h5
+*.bin
+models/**
+!models/**/
+!models/.gitkeep
+!models/churn_model.joblib
+
+# =========================================
+# Data science: experimentos e tracking
+# =========================================
+mlruns/
+mlartifacts/
+wandb/
+lightning_logs/
+outputs/
+runs/
+.dvc/tmp/
+.dvc/cache/
+catboost_info/
+optuna*.db
+
+# Relatórios e figuras gerados
+reports/figures/*
+!reports/figures/.gitkeep
+
+# =========================================
+# IDEs e editores
+# =========================================
+.vscode/
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.spyderproject
+.spyproject
+.ropeproject
+
+# =========================================
+# Sistema operacional
+# =========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================================
+# Docker (dados locais de volumes)
+# =========================================
+docker-data/
+.docker/
+docker-compose.override.yml
