@@ -5,7 +5,7 @@ from pydantic import BaseModel, ConfigDict, Field
 YesNo = Literal["Yes", "No"]
 
 
-class Churn(BaseModel):
+class CustomerChurn(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     customer_id: str = Field(alias="customerID")
