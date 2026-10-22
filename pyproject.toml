@@ -32,6 +32,8 @@ notebooks = [
     "seaborn>=0.13.2",
     "scipy>=1.18.1",
     "imbalanced-learn>=0.14.2",
+    "mlflow>=3.17.2",
+
 ]
 
 [tool.uv]
