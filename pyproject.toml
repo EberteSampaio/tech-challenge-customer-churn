@@ -8,7 +8,6 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "fastapi>=0.148.0",
     "pandas>=3.0.6",
     "scikit-learn>=1.9.1",
     "uvicorn>=0.54.0",
@@ -25,6 +24,7 @@ module-name = "churn"
 dev = [
     "httpx>=0.28.1",
     "pytest>=9.1.1",
+    "fastapi[standard]>=0.148.0",
 ]
 notebooks = [
     "jupyterlab>=4.6.4",
@@ -38,3 +38,6 @@ notebooks = [
 
 [tool.uv]
 default-groups = ["dev", "notebooks"]
+
+[tool.fastapi]
+entrypoint = "src.churn.main:app"
