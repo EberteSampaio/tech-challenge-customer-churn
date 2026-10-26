@@ -1,2 +1,4 @@
 from churn.schemas.churn import CustomerChurn
-__all__ = ["CustomerChurn"]
+from churn.schemas.churn_response import ChurnResponse
+
+__all__ = ["CustomerChurn", "ChurnResponse"]
