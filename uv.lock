@@ -510,19 +510,21 @@ version = "0.1.0"
 source = { editable = "." }
 default-groups = ["dev", "notebooks"]
 dependencies = [
+    { name = "fastapi", extra = ["standard"] },
+    { name = "imbalanced-learn" },
+    { name = "joblib" },
     { name = "pandas" },
+    { name = "pydantic" },
     { name = "scikit-learn" },
     { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "fastapi", extra = ["all"] },
     { name = "httpx" },
     { name = "pytest" },
 ]
 notebooks = [
-    { name = "imbalanced-learn" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "mlflow" },
@@ -532,19 +534,21 @@ notebooks = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fastapi", extras = ["standard"], specifier = ">=0.148.0" },
+    { name = "imbalanced-learn", specifier = ">=0.14.2" },
+    { name = "joblib", specifier = ">=1.6.0" },
     { name = "pandas", specifier = ">=3.0.6" },
+    { name = "pydantic", specifier = ">=2.14.1" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
     { name = "uvicorn", specifier = ">=0.54.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "fastapi", extras = ["all"], specifier = ">=0.148.0" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "pytest", specifier = ">=9.1.1" },
 ]
 notebooks = [
-    { name = "imbalanced-learn", specifier = ">=0.14.2" },
     { name = "jupyterlab", specifier = ">=4.6.4" },
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "mlflow", specifier = ">=3.17.2" },
@@ -830,19 +834,18 @@ wheels = [
 ]
 
 [package.optional-dependencies]
-all = [
+standard = [
     { name = "email-validator" },
     { name = "fastapi-cli", extra = ["standard"] },
+    { name = "fastar" },
     { name = "httpx" },
     { name = "httpx2" },
-    { name = "itsdangerous" },
     { name = "jinja2" },
     { name = "opentelemetry-exporter-otlp-proto-http" },
     { name = "opentelemetry-sdk" },
     { name = "pydantic-extra-types" },
     { name = "pydantic-settings" },
     { name = "python-multipart" },
-    { name = "pyyaml" },
     { name = "uvicorn", extra = ["standard"] },
 ]
 
