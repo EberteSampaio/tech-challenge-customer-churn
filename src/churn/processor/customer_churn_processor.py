@@ -10,12 +10,16 @@ logger = logging.getLogger(__name__)
 class CustomerChurnProcessor:
 
     def apply_raw_cleaning_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        if 'customerID' in df.columns:
+            df = df.drop(columns=['customerID'])
+
         df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
         return df
 
     def apply_raw_mapping_data(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = ColumnMapper(["PhoneService", "PaperlessBilling", "Partner", "Dependents", "Churn"],
+        df = ColumnMapper(["PhoneService", "PaperlessBilling", "Partner", "Dependents"],
                           Mappings.YES_NO).transform(df)
+        df['SeniorCitizen'] = df['SeniorCitizen'].astype(int)
         df = ColumnMapper(["MultipleLines"], Mappings.PHONE).transform(df)
         df = ColumnMapper(Mappings.INTERNET_SERVICE, Mappings.INTERNET).transform(df)
         df = ColumnMapper(['gender'], {"Male": 0, "Female": 1}).transform(df)
