@@ -88,20 +88,20 @@ uv run uvicorn churn.main:app --reload
 
 A documentação interativa fica em `http://127.0.0.1:8000/docs`.
 
-### `GET /health/`
+### `GET /health`
 
 ```bash
-curl http://127.0.0.1:8000/health/
+curl http://127.0.0.1:8000/health
 ```
 
 ```json
 {"status": "ok"}
 ```
 
-### `POST /predict/`
+### `POST /predict`
 
 ```bash
-curl -X POST http://127.0.0.1:8000/predict/ \
+curl -X POST http://127.0.0.1:8000/predict \
   -H 'Content-Type: application/json' \
   -d '{
     "customerID": "0001-EXEMPLO",
@@ -200,11 +200,8 @@ O modelo não identifica churn em dois grupos: clientes com contrato de dois ano
 serviço de internet. Em ambos o recall no teste é zero. O [Model Card](docs/model_card.md) detalha
 esses pontos cegos, as diferenças de desempenho entre subgrupos e os cuidados de uso.
 
-No código, dois itens permanecem abertos:
-
-- `/health` e `/predict` sem a barra final respondem **307** em vez de 200.
-- `CustomerChurnProcessor.apply_raw_cleaning_data` altera o DataFrame recebido quando a coluna
-  `customerID` já foi removida.
+No código, um item permanece aberto: `CustomerChurnProcessor.apply_raw_cleaning_data` altera o
+DataFrame recebido quando a coluna `customerID` já foi removida.
 
 ## Autor
 

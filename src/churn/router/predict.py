@@ -6,7 +6,7 @@ from churn.service import PredictService
 router = APIRouter(prefix="/predict", tags=["Prediction"])
 
 
-@router.post("/", status_code=status.HTTP_200_OK)
+@router.post("", status_code=status.HTTP_200_OK)
 def predict(request: CustomerChurn, service: PredictService = Depends(PredictService)) -> ChurnResponse:
     try:
         return service.predict(request)
