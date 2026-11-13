@@ -30,7 +30,6 @@ jobs:
       - name: Instalar dependencias
         run: |
           uv sync --all-extras --dev
-          uv pip install --system pytest pytest-cov
 
       - name: Executar testes
         run: |
