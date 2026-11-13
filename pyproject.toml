@@ -28,6 +28,7 @@ module-name = "churn"
 dev = [
     "httpx>=0.28.1",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
 ]
 notebooks = [
     "jupyterlab>=4.6.4",

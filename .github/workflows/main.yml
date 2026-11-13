@@ -28,8 +28,7 @@ jobs:
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Instalar dependencias
-        run: |
-          uv sync --all-extras --dev
+        run: uv sync --no-default-groups --group dev
 
       - name: Executar testes
         run: |
